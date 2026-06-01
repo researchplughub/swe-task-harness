@@ -1,0 +1,31 @@
+# Git
+.git
+.gitignore
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Project local caches and runs
+temp_repos/
+mock_repos/
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE and other config files
+.vscode/
+.idea/
+*.swp
+*.swo
+README.md
