@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  swe-harness:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: swe-task-harness:latest
+    container_name: swe-task-harness-runner
+    volumes:
+      # Mount a local directory to retrieve output JSON files and persist repositories
+      - ./workspace:/app/workspace
+      # Persist virtual environments cache to speed up repeated runs
+      - ./venv_cache:/app/venv_cache
+    environment:
+      - PYTHONUNBUFFERED=1
+      - WORKSPACE_DIR=/app/workspace
+      - VENV_CACHE_DIR=/app/venv_cache
+    network_mode: bridge
